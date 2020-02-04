@@ -10,4 +10,4 @@ jobs:
         uses: jboursiquot/aws-keys-detector@master
       - name: Check outputs
         run: |
-          grep "keys"
+          test "${{ steps.selftest.outputs.NumHits }}" == "2"

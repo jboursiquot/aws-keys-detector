@@ -15,6 +15,8 @@ func main() {
 		log.Fatalf("error: %v", err)
 	}
 
+	fmt.Printf("::set-output name=NumHits::%d\n", len(hits))
+
 	for _, h := range hits {
 		fmt.Printf("::set-output name=KeysFoundIn::%s|%s\n", h.file, h.line)
 	}
