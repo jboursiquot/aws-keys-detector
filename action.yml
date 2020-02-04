@@ -1,0 +1,9 @@
+name: "Detect AWS access keys in your project"
+description: "Detect hard-coded AWS Secret Access Keys and Access KEY IDs in in your project files."
+author: "Johnny Boursiquot"
+outputs:
+  hits:
+    description: "The locations where secret are found."
+runs:
+  using: "docker"
+  image: "Dockerfile"
