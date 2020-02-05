@@ -1,0 +1,13 @@
+name: Integration Test
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Self test
+        id: selftest
+        uses: jboursiquot/aws-keys-detector@master
+      - name: Check outputs
+        run: |
+          test "${{ steps.selftest.outputs.NumHits }}" == "16"
